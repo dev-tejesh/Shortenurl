@@ -1,0 +1,28 @@
+.headingstyle {
+  color: black;
+  font-weight: bold;
+}
+div.ex1{
+    max-width: 500px;
+    margin: auto;
+}
+div.ex2 {
+  max-width: 500px;
+  margin: auto;
+  border: 3px solid grey;
+}
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
+}

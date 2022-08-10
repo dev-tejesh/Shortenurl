@@ -1,0 +1,97 @@
+.primary{
+    color: orange;
+}
+.font{
+    font-size: 50px;
+
+}
+text-primary{
+    color: red;
+}
+.spa{
+    color: red;
+ 
+}
+.pad1{
+ /* color: red; */
+ display: flex;
+ margin-left: 2rem;
+ margin-right: 2rem;
+ margin-top: 0;
+ margin-bottom: 0;
+ /* padding: 10px; */
+ /* justify-content: space-around; */
+
+}
+.container{
+    display: flex;
+    font-size: 35px;
+    color: gray;
+    font-weight: bold;
+    /* flex-direction: column; */
+    justify-content: center;
+    text-align: center;
+}
+.align{
+    text-align: center;
+}
+.prop{
+    font-size: x-small;
+    margin-right: 3px;
+    font-weight: 400;
+    /* color: gray; */
+}
+.pro{
+    font-size: x-small;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.margin1{
+   margin-bottom: 3rem;
+   margin-top: 20px;
+}
+.margin2{
+    margin-top: 20px;
+
+}
+hr.myhrline{
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 0rem;
+ }
+ .mar1{
+    margin-right: 2rem;
+ }
+ .container2{
+    display: flex;
+    /* background-color: red; */
+    flex-flow: row wrap;
+    width: 100%;
+    /* margin: 10px; */
+    /* padding: 2rem; */
+    /* justify-items: center; */
+    justify-content: center;
+
+    /* align-items: center; */
+ }
+ .but{
+    /* text-align: center; */
+    /* display: flex; */
+    /* justify-content: center;
+    margin-left: auto;
+    margin-right: auto; */
+    /* float:right; */
+    text-align: center;
+ }
+ .butmar{
+    margin-top: 20px;
+ }
+.mar3{
+   display: grid;
+
+}
+mar4{
+    margin:1rem;
+}

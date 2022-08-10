@@ -1,0 +1,40 @@
+.flex {
+  display: flex;
+  justify-content: center;
+  /* padding-bottom: 10px; */
+}
+.pad {
+  padding-right: 15px;
+}
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2rem;    /* Footer height */
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* line-height: 10em; */
+  background-color: #333;
+  border-top: 5px solid #00a0db;
+  height: 10rem;
+
+}
+.style2 {
+  font-size: smaller;
+  font-weight: 300;
+}
+div.ex1 {
+  max-width: 800px;
+  margin: auto;
+  padding: 8px;
+}
+.fle{
+  display: flex;
+  justify-content: center;
+}

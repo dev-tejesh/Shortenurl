@@ -1,0 +1,56 @@
+div.ex1 {
+  max-width: 800px;
+  margin: auto;
+  padding: 8px;
+}
+ul.ex1 {
+  max-width: 800px;
+  margin: auto;
+}
+div.ex2 {
+  max-width: 900px;
+  margin: auto;
+  border: 3px solid grey;
+}
+.style1 {
+  font-size: large;
+}
+.style2 {
+  font-size: smaller;
+  font-weight: 300;
+}
+
+
+.flex {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+.pad {
+  padding-right: 15px;
+}
+
+html,
+body {
+  height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+
+  margin-bottom: -142px;
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer,
+.page-wrap:after {
+  height: 142px;
+}
+.site-footer {
+  background: #424242;
+  border-top: 5px solid #00a0db;
+}
+.headingstyle{
+  color: black;
+}
