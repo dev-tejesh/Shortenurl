@@ -50,6 +50,13 @@ body {
 .site-footer {
   background: #424242;
   border-top: 5px solid #00a0db;
+  
+}
+@media only screen and (max-width: 700px) {
+  /* For mobile phones: */
+  .site-footer{
+    height: 100%;
+  }
 }
 .headingstyle{
   color: black;

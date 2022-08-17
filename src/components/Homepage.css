@@ -1,75 +1,94 @@
-.fl{
-   display: flex;
-   justify-content: center;
-   /* flex-direction: column; */
+.fl {
+  display: flex;
+  justify-content: center;
+
+  /* flex-direction: column; */
 }
 
-.container1{
-   border: 5px solid gray;
-  
-   text-align: center;
-  
+.container1 {
+  border: 5px solid gray;
+
+  text-align: center;
 }
-.blackcolor{
+.blackcolor {
   color: black;
   font-weight: 800;
 }
-.container{
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
-input{
-   width: 75%;
-   min-width: 50%;
-   
+input {
+  width: 75%;
+  min-width: 50%;
 }
-button{
-   width: 75%;
+button {
+  width: 75%;
 }
-.style1{
-   color: black;
-   font-weight: 200;
-   font-size: 0.8rem;
+.style1 {
+  color: black;
+  font-weight: 200;
+  font-size: 0.8rem;
 }
-.style2{
-   font-size: large;
-   color:black;
-   font-weight: 700;
+.style2 {
+  font-size: large;
+  color: black;
+  font-weight: 700;
 }
-.style3{
-   font-size: small;
-   color: black;
-   font-weight: 300;
+.style3 {
+  font-size: small;
+  color: black;
+  font-weight: 300;
 }
-.flex{
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   width: 100%;
-   /* background-color: red; */
-   flex-wrap:wrap;
+.p-right {
+  padding-right: 20px;
 }
-html, body {
-   height: 100%;
- }
- .page-wrap {
-   min-height: 100%;
-   /* equal to footer height */
-   margin-bottom: -142px; 
- }
- .page-wrap:after {
-   content: "";
-   display: block;
- }
- .site-footer, .page-wrap:after {
-   height: 142px; 
- }
- .site-footer {
-   background: #333;
- }
- div.ex1 {
-   max-width: 800px;
-   margin: auto;
-   padding: 8px;
- }
+.p-rig {
+  padding-right: 40px;
+}
+.flex {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* justify-items:flex-start; */
+  width: 100%;
+  /* background-color: red; */
+  flex-wrap: wrap;
+}
+html,
+body {
+  height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -142px;
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer,
+.page-wrap:after {
+  height: 142px;
+}
+.site-footer {
+  background: #424242;
+  border-top: 5px solid #00a0db;
+}
+@media only screen and (max-width: 700px) {
+  /* For mobile phones: */
+  .site-footer {
+    height: 100%;
+  }
+}
+div.ex1 {
+  max-width: 800px;
+  margin: auto;
+  padding: 8px;
+}
+.req {
+  padding-top: 200px;
+}
