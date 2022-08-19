@@ -2,13 +2,16 @@ import React from "react";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import "./Homepage.css";
+import { Link } from "react-router-dom";
 function Homepage() {
   return (
     <div class="page-wrap">
       <div className="bgcolor">
         <Navbar bg="body" expand="lg" className="pad1">
-          <Navbar.Brand href="#home" className="text-warning fw-bold">
-            Shorten-Url
+          <Navbar.Brand className="text-warning fw-bold">
+            <Link to="/" style={{ textDecoration: "none" }}>
+              Shorten-Url
+            </Link>
           </Navbar.Brand>
           <Nav.Link href="#home" className="text-primary ms-auto pr-8">
             Logout
@@ -64,15 +67,15 @@ function Homepage() {
         </div>
         <div className="container">
           <div className="flex">
-            <div>
+            <div className="p-right">
               <img src="done.png" alt="Italian Trulli"></img>
               <div>Easy</div>
-              <div className="fl style3">
+              <div className="fl style3 ">
                 ShortURL is easy and fast, enter the long link
               </div>
               <div className="fl style3 mb-3">to get your shortened link</div>
             </div>
-            <div>
+            <div className="p-right">
               <img src="shortend.png" alt="Italian Trulli"></img>
               <div>Shortend</div>
               <div className="fl style3">
@@ -80,7 +83,7 @@ function Homepage() {
               </div>
               <div className="fl style3 mb-3">always shortens</div>
             </div>
-            <div>
+            <div className="p-right">
               <img src="secure.png" alt="Italian Trulli"></img>
               <div>Secure</div>
               <div className="fl style3">
@@ -88,7 +91,7 @@ function Homepage() {
               </div>
               <div className="fl style3 mb-3">protocol and data encryption</div>
             </div>
-            <div>
+            <div className="p-rig">
               <img src="reliable.png" alt="Italian Trulli"></img>
               <div>Reliable</div>
               <div className="fl style3">
@@ -96,7 +99,7 @@ function Homepage() {
               </div>
               <div className="fl style3 mb-3">and malware are deleted</div>
             </div>
-            <div>
+            <div className="p-rig">
               <img src="statistics.png" alt="Italian Trulli"></img>
               <div>Statistics</div>
               <div className="fl style3">
@@ -104,7 +107,7 @@ function Homepage() {
               </div>
               <div className="fl style3 mb-3">shortened url received</div>
             </div>
-            <div>
+            <div className="p-rig">
               <img src="devices.png" alt="Italian Trulli"></img>
               <div>Devices</div>
               <div className="fl style3">
@@ -114,32 +117,33 @@ function Homepage() {
             </div>
           </div>
         </div>
-        <footer className="site-footer">
-          <div className="ex1 headingstyle style2 text-white font-weight-bold fl pt-3">
-            2022 shorten URL - Tool to shorten a long link
-          </div>
-          <div className="fle">
-            <a href="http://" className="pad">
-              shortenUrl
-            </a>
-
-            <a href="http://" className="pad">
-              URL Click Counter
-            </a>
-            <a href="http://" className="pad">
-              Report Malicious URL
-            </a>
-            <a href="http://" className="pad">
-              Terms Of Service
-            </a>
-            <a href="" className="pad">
-              Privacy
-            </a>
-            <a href="http://" className="pad">
-              Contact
-            </a>
-          </div>
-        </footer>
+        <div>
+          <footer className="site-footer mt-5">
+            <div className="ex1 headingstyle style2 text-white font-weight-bold fl pt-3">
+              2022 shorten URL - Tool to shorten a long link
+            </div>
+            <div className="fle">
+              <div className="pad">
+                <Link to="/">ShortenUrl</Link>
+              </div>
+              <div className="pad">
+                <Link to="/clickscounter">URL Clicks Counter</Link>
+              </div>
+              <div className="pad">
+                <Link to="/malicious">Report Malicious URL</Link>
+              </div>
+              <div className="pad">
+                <Link to="/termsofservice">Terms Of Service</Link>
+              </div>
+              <div className="pad">
+                <Link to="/privacy">Privacy</Link>
+              </div>
+              <div className="pad">
+                <Link to="/contact">Contact</Link>
+              </div>
+            </div>
+          </footer>
+        </div>
       </div>
     </div>
   );
