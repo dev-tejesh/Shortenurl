@@ -7,16 +7,15 @@ function Termsofservice() {
   return (
     <div>
       <div class="page-wrap">
-        <Navbar bg="body" expand="lg" className="pad1">
-          <Navbar.Brand className="headingstyle text-primary fw-bold">
-            <Link to="/" style={{ textDecoration: "none" }}>
-              Shorten-Url
-            </Link>
-          </Navbar.Brand>
-          <Nav.Link href="#home" className="text-primary ms-auto pr-8">
-            Logout
-          </Nav.Link>
-        </Navbar>
+        <div className="d">
+          <Navbar bg="body" expand="lg" className="pad1">
+            <Navbar.Brand className="headingstyle text-primary fw-bold">
+              <Link to="/" style={{ textDecoration: "none" }}>
+                Shorten-Url
+              </Link>
+            </Navbar.Brand>
+          </Navbar>
+        </div>
         <hr className="myhrline"></hr>
         <div className="ex1 headingstyle style1 font-weight-bold mb-2">
           Terms of service

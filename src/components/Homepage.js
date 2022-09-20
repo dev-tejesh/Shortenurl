@@ -1,22 +1,90 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import "./Homepage.css";
+import "./Termsofservice.css";
+import axios from "axios";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import * as ReactBootstrap from "react-bootstrap";
+import { Audio } from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
+import validator from "validator";
+
 function Homepage() {
+  const [LongUrl, setLongUrl] = useState("");
+  const [data, setData] = useState([]);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const api = axios.create({
+    baseURL: "https://shotyurl.herokuapp.com",
+  });
+  const [errorMessage, setErrorMessage] = useState("");
+  const [check, setCheck] = useState(false);
+
+  const validate = (value) => {
+    if (validator.isURL(value)) {
+      setCheck(true);
+      // setErrorMessage("Is Valid URL");
+      setErrorMessage("");
+    } else {
+      setLoading(false);
+      setErrorMessage("enter a valid Url");
+    }
+  };
+  // const senturl = async (LongUrl) => {
+  //   await api.post("/", { longUrl: LongUrl }).then((response) => {
+  //     console.log("success");
+  //     setData(response.data);
+  //     console.log(data);
+  //     if (response.status === 200) {
+  //       navigate("/surl");
+  //     }
+  //   });
+  // };
+
+  const senturl = async (LongUrl) => {
+    setLoading(true);
+    if(LongUrl===""){
+      setLoading(false);
+    }
+    await axios
+      .post("https://shotyurl.herokuapp.com", { longUrl: LongUrl })
+      .then((res) => {
+        setData(res.data);
+        console.log(data);
+        setLoading(false);
+        navigate("/surl", {
+          state: { longUrl: LongUrl, shortUrl: res.data.shortUrl },
+        });
+      })
+      .catch((err) => {
+        console.log(err.data);
+      });
+  };
+  useEffect(() => {
+    senturl(LongUrl);
+    validate(LongUrl);
+    
+  }, []);
+  // const baseURL = "https://shotyurl.herokuapp.com";
+  // useEffect(() => {
+  //   senturl(LongUrl);
+  // }, [baseURL]);
   return (
     <div class="page-wrap">
       <div className="bgcolor">
-        <Navbar bg="body" expand="lg" className="pad1">
-          <Navbar.Brand className="text-warning fw-bold">
-            <Link to="/" style={{ textDecoration: "none" }}>
-              Shorten-Url
-            </Link>
-          </Navbar.Brand>
-          <Nav.Link href="#home" className="text-primary ms-auto pr-8">
-            Logout
-          </Nav.Link>
-        </Navbar>
+        <div className="d">
+          <Navbar bg="body" expand="lg" className="pad1">
+            <Navbar.Brand className="text-warning fw-bold">
+              <Link to="/" style={{ textDecoration: "none" }}>
+                Shorten-Url
+              </Link>
+            </Navbar.Brand>
+          </Navbar>
+        </div>
         <hr className="myhrline"></hr>
         <div className="container text-primary font-weight-bold mb-2">
           Shorten-URL
@@ -26,10 +94,69 @@ function Homepage() {
             Paste the url to be shortend
           </label>
           <div className="fl">
-            <input type="link" id="url" name="url"></input>
+            <input
+              placeholder="Enter url to get shortend"
+              type="link"
+              id="url"
+              name="url"
+              value={LongUrl}
+              onChange={(e) => {
+                setLongUrl(e.target.value);
+                validate(e.target.value);
+              }}
+            ></input>
+
+            {/* <div>{error}</div> */}
           </div>
+          <div
+            style={{
+              color: "red",
+              fontWeight: "lighter",
+              fontSize: "smaller",
+              // fontSize:10px,
+            }}
+          >
+            {errorMessage}
+          </div>
+          {loading ? (
+            <div className="cen">
+              <ThreeDots
+                height="80"
+                width="80"
+                radius="9"
+                color="blue"
+                ariaLabel="three-dots-loading"
+                wrapperStyle={{}}
+                wrapperClassName=""
+                visible={true}
+              />
+              {/* <Audio
+            className="align-items-center justify-content-center"
+            height="80"
+            width="80"
+            radius="9"
+            color="green"
+            ariaLabel="loading"
+            wrapperStyle
+            wrapperClass
+          /> */}
+            </div>
+          ) : (
+            <div></div>
+          )}
           <div className="fl">
-            <button className="btn btn-primary mt-4 mb-1">Shorten Url</button>
+            <button
+              disabled={loading}
+              // onChange={(e) => validate(e.target.value)}
+              className="btn btn-primary mt-4 mb-1"
+              onClick={() => {
+                check ? senturl(LongUrl) : <div></div>;
+                // {check}?
+                // senturl(LongUrl);
+              }}
+            >
+              Shorten Url
+            </button>
           </div>
           <div className="fl style1">
             ShortenURL is a free tool to shorten a URL or reduce a link
@@ -118,7 +245,7 @@ function Homepage() {
           </div>
         </div>
         <div>
-          <footer className="site-footer mt-5">
+          <footer id="footers">
             <div className="ex1 headingstyle style2 text-white font-weight-bold fl pt-3">
               2022 shorten URL - Tool to shorten a long link
             </div>

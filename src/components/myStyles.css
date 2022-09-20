@@ -85,6 +85,10 @@ hr.myhrline{
     /* float:right; */
     text-align: center;
  }
+ .wid{
+    width: 50%;
+    background-color: white;
+ }
  .butmar{
     margin-top: 20px;
  }
@@ -94,4 +98,47 @@ hr.myhrline{
 }
 mar4{
     margin:1rem;
+}
+.customcontainer{
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+    /* max-width: 1%; */
+    /* max-width: 50%; */
+    /* min-width: 50%; */
+}
+.check{
+    background-color: red;
+    display: flex;
+    justify-content: center;
+}
+.cont{
+    max-width: 720px;
+  
+}
+.newflex{
+    background-color: red;
+    display: flex;
+    justify-content: center;
+}
+.news{
+    width: 540px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    /* background-color: red; */
+   /* max-width: 50%; */
+    /* vertical-align: middle; */
+    /* background-color: red; */
+}
+.update{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* background-color: blue; */
+}
+.font{
+    font-size: 25px;
 }

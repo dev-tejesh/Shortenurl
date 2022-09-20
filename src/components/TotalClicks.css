@@ -1,0 +1,66 @@
+.font1{
+    font-size: xx-large;
+}
+.aadi{
+    
+    /* background-color: red; */
+    margin: auto;
+    width: 40%;
+    
+
+}
+@media only screen and (max-width: 850px) {
+    /* For mobile phones: */
+    .aadi{
+        /* background-color: red; */
+        width: 100%;
+        padding: 20px;
+    }
+  }
+  @media only screen and (min-width: 768px) and (max-width: 979px) {
+
+    .aadi{
+        /* background-color: aqua; */
+        width: 80%;
+    }
+    
+    }
+  
+    .colorbutton {
+        display: inline-block;
+        background: #2c87c5;
+        font: bold 17px lato,arial;
+        color: #fff;
+        padding: 16px 26px;
+        border: 0;
+        border-radius: 3px;
+        text-decoration: none;
+        margin: 0 0 5px 0;
+        text-align: center;
+        margin: auto;
+        /* max-width: 60%; */
+    }
+    .fl{
+        display: flex;
+        /* background-color: red; */
+        flex-wrap: wrap;
+    }
+  .fo{
+    font-size: 70px;
+  }
+  
+  #footer {
+    position: fixed;
+    /* padding: 10px 10px 0px 10px; */
+    bottom: 0;
+    width: 100%;
+    /* Height of the footer*/
+    height: 200px;
+    background: #424242;
+    border-top: 5px solid #00a0db;
+    
+}
+.f{
+    font-size: medium;
+    font-weight: bold;
+}

@@ -11,6 +11,8 @@ import Malicious from "./components/Malicious";
 import Termsofservice from "./components/Termsofservice";
 import Privacy from "./components/Privacy";
 import Contact from "./components/Contact";
+import TotalClicks from "./components/TotalClicks";
+import ShortendUrl from "./components/ShortendUrl";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function App() {
   return (
@@ -18,12 +20,16 @@ function App() {
     <div>
       <Router>
         <Routes>
+          <Route path="/login" element={<Login></Login>}/>
+          <Route path="/signup" element={<Signup></Signup>}/>
           <Route path="/" element={<Homepage />} />
           <Route path="/clickscounter" element={<Clickscounter />} />
           <Route path="/malicious" element={<Malicious />} />
           <Route path="/termsofservice" element={<Termsofservice />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/totalclicks" element={<TotalClicks/>}/>
+          <Route path="/surl" element={<ShortendUrl/>}/>
         </Routes>
       </Router>
       

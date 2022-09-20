@@ -23,7 +23,9 @@ function Malicious() {
     setIsSubmit(true);
     console.log("came");
     e.preventDefault();
-    emailjs
+    if (Object.keys(formErrors).length === 0 && isSubmit) {
+      console.log(formValues);
+      emailjs
       .sendForm(
         "service_qf4to2t",
         "template_wm1orqr",
@@ -34,13 +36,15 @@ function Malicious() {
         console.log("success");
       })
       .catch((err) => console.log(err));
+    }
+    
   };
 
   useEffect(() => {
     console.log(formErrors);
     if (Object.keys(formErrors).length === 0 && isSubmit) {
       console.log(formValues);
-      // sendEmail();
+      
     }
   }, [formErrors]);
   const validate = (values) => {
@@ -82,16 +86,16 @@ function Malicious() {
     <div id="page-container">
       <div id="content-wrap">
         <div>
+          <div className="d">
           <Navbar bg="body" expand="lg" className="pad1">
             <Navbar.Brand className="headingstyle text-primary fw-bold">
               <Link to="/" style={{ textDecoration: "none" }}>
                 Shorten-Url
               </Link>
             </Navbar.Brand>
-            <Nav.Link href="#home" className="text-primary ms-auto pr-8">
-              Logout
-            </Nav.Link>
+            
           </Navbar>
+          </div>
           <hr className="myhrline"></hr>
           <div className="container headingstyle font-weight-bold mb-2">
             Report Malicious Short Link

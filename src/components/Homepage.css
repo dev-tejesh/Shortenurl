@@ -1,6 +1,9 @@
 .fl {
   display: flex;
   justify-content: center;
+  /* background-color: red; */
+
+ /* margin: 70%; */
 
   /* flex-direction: column; */
 }
@@ -13,6 +16,12 @@
 .blackcolor {
   color: black;
   font-weight: 800;
+}
+.d{
+  display: flex;
+  /* background-color: red; */
+  align-items: center;
+  justify-content: center;
 }
 .container {
   display: flex;
@@ -61,29 +70,46 @@ html,
 body {
   height: 100%;
 }
-.page-wrap {
+
+#footers {
+  position: fixed;
+  padding: 10px 10px 0px 10px;
+  bottom: 0;
+  width: 100%;
+  /* Height of the footer*/
+  height: 150px;
+  background: #424242;
+  border-top: 5px solid #00a0db;
+}
+@media only screen and (max-width: 600px) {
+  #footers{
+    height: 170px;
+  }
+}
+/* .page-wrap {
   min-height: 100%;
   /* equal to footer height */
-  margin-bottom: -142px;
-}
-.page-wrap:after {
+  /* margin-bottom: -142px; */
+/* } */
+/* .page-wrap:after {
   content: "";
   display: block;
-}
-.site-footer,
+} */
+/* .site-footer,
 .page-wrap:after {
   height: 142px;
 }
 .site-footer {
   background: #424242;
   border-top: 5px solid #00a0db;
-}
-@media only screen and (max-width: 700px) {
+  bottom: 0;
+} */
+/* @media only screen and (max-width: 700px) { */
   /* For mobile phones: */
-  .site-footer {
-    height: 100%;
-  }
-}
+  /* .site-footer {
+    height: 100%; */
+  /* } */
+/* } */ */
 div.ex1 {
   max-width: 800px;
   margin: auto;
@@ -91,4 +117,14 @@ div.ex1 {
 }
 .req {
   padding-top: 200px;
+}
+.update{
+  
+  width: 100%;
+}
+.cen{
+  display: flex;
+  flex:1;
+  align-items: center;
+  justify-content: center;
 }
