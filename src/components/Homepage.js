@@ -168,7 +168,7 @@ function Homepage() {
       const response = await axios.post("https://small.tejesh.in/", {
         longUrl,
       });
-      setShortUrl("https://small.tejesh.in/"+response.data.urlCode);
+      setShortUrl("https://small.tejesh.in/"+response.data.urlCode+"/");
     } catch (err) {
       console.log(err)
       setError("An error occurred while shortening the URL. Please try again.");

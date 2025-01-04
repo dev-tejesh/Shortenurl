@@ -1,9 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import "./Clickscounter.css";
 import { Link } from "react-router-dom";
+
 function Clickscounter() {
+  const [url, setUrl] = useState("");
+  const [clicks, setClicks] = useState(null);
+  const [error, setError] = useState("");
+
+  const handleTrackClicks = async () => {
+    if (!url.includes("small.tejesh.in/")) {
+      setError("URL must start with small.tejesh.in/");
+      setClicks(null);
+      return;
+    }
+
+    try {
+      console.log("came")
+      const response = await fetch(`${url}stats`);
+      if (!response.ok) {
+        throw new Error("Failed to fetch stats");
+      }
+      const data = await response.json();
+      setClicks(data.clicks);
+      setError("");
+    } catch (err) {
+      setError("Unable to fetch stats. Please try again.");
+      setClicks(null);
+    }
+  };
+
   return (
     <div id="page-container">
       <div id="content-wrap">
@@ -14,9 +41,6 @@ function Clickscounter() {
                 Shorten-Url
               </Link>
             </Navbar.Brand>
-            {/* <Nav.Link href="#home" className="text-primary ms-auto pr-8">
-              Logout
-            </Nav.Link> */}
           </Navbar>
           <hr className="myhrline"></hr>
           <div className="container headingstyle font-weight-bold mb-2">
@@ -25,19 +49,32 @@ function Clickscounter() {
           <div className="fl style1 pb-2 mb-4">
             Enter the URL to find out how many clicks it has received so far.
           </div>
-          <div className="container border border-5 ">
-            <label for="url" className="blackcolor mt-3 mb-4">
-              Enter your shortend url
+          <div className="container border border-5">
+            <label htmlFor="url" className="blackcolor mt-3 mb-4">
+              Enter your shortened URL
             </label>
             <div className="fl">
-              <input type="link" id="url" name="url"></input>
+              <input
+                type="text"
+                id="url"
+                name="url"
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
+              ></input>
             </div>
             <div className="fl">
-              <button className="btn btn-primary mt-4 mb-1">
+              <button
+                className="btn btn-primary mt-4 mb-1"
+                onClick={handleTrackClicks}
+              >
                 Track clicks
               </button>
             </div>
-            <div className="fl style1">Example: shorturl.at/AbCdE</div>
+            {error && <div className="fl text-danger mt-2">{error}</div>}
+            {clicks !== null && (
+              <div className="fl text-success mt-2">Total Clicks: {clicks}</div>
+            )}
+            <div className="fl style1">Example: small.tejesh.in/AbCdEFG</div>
           </div>
           <div className="fl style1 pt-3 mb-3">
             * Track the total hits of the shortened URL in real time
