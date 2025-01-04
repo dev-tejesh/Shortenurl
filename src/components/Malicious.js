@@ -88,9 +88,9 @@ function Malicious() {
                 Shorten-Url
               </Link>
             </Navbar.Brand>
-            <Nav.Link href="#home" className="text-primary ms-auto pr-8">
+            {/* <Nav.Link href="#home" className="text-primary ms-auto pr-8">
               Logout
-            </Nav.Link>
+            </Nav.Link> */}
           </Navbar>
           <hr className="myhrline"></hr>
           <div className="container headingstyle font-weight-bold mb-2">

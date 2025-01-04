@@ -13,9 +13,9 @@ function Termsofservice() {
               Shorten-Url
             </Link>
           </Navbar.Brand>
-          <Nav.Link href="#home" className="text-primary ms-auto pr-8">
+          {/* <Nav.Link href="#home" className="text-primary ms-auto pr-8">
             Logout
-          </Nav.Link>
+          </Nav.Link> */}
         </Navbar>
         <hr className="myhrline"></hr>
         <div className="ex1 headingstyle style1 font-weight-bold mb-2">
